@@ -129,6 +129,7 @@ runs:
       env:
         FOD_URL: ${{ inputs.fod_url }}
         FOD_CLIENT_ID: ${{ inputs.fod_client_id }}
+        FOD_TENANT: "FranklinBank24"
         FOD_CLIENT_SECRET: ${{ inputs.fod_client_secret }}
         FOD_RELEASE: ${{ format('{0}:{1}', inputs.fod_app_name, inputs.fod_release_name) }}
     # Logout/Close Fortify on Demand fcli session
