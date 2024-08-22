@@ -130,6 +130,7 @@ runs:
         FOD_URL: "https://ams.fortify.com/"
         FOD_TENANT: "FranklinBank24"
         FOD_CLIENT_SECRET: ${{ inputs.fod_client_secret }}
+        FOD_CLIENT_ID: ${{ inputs.fod_client_id }}
         FOD_RELEASE: ${{ format('{0}:{1}', inputs.fod_app_name, inputs.fod_release_name) }}
     # Logout/Close Fortify on Demand fcli session
     - name: Logout fcli
