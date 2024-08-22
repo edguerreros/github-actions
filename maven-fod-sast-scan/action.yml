@@ -29,14 +29,6 @@ inputs:
     required: false
     description: "FoD Parent Release Name"
     default: "main"
-  gradle_version:
-    required: false
-    description: "Version of Gradle to use"
-    default: "7.3"
-  gradle_build_command:
-    required: false
-    description: "Gradle build command(s) to use"
-    default: "clean build -x test"
 outputs:
   fod_scan_id:
     description: "FoD Scan Id"
@@ -85,10 +77,9 @@ runs:
     - name: Package Code + Dependencies
       uses: edguerreros/github-action/package@main
       env:
-        EXTRA_PACKAGE_OPTS: -bt mvn -bf "${BUILD_FILE}" -bc "${BUILD_COMMAND}" -oss
+        EXTRA_PACKAGE_OPTS: -bf "${BUILD_FILE}" -oss
         PACKAGE_FILE: "package"
-        BUILD_FILE: "build.gradle"
-        BUILD_COMMAND: ${{ inputs.gradle_build_command }}
+        BUILD_FILE: "pom.xml"
     # Start Fortify on Demand SAST scan and wait until results complete.
     - name: Perform FoD SAST scan
       id: fod-sast-scan
