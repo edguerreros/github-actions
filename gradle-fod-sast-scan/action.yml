@@ -127,7 +127,7 @@ runs:
     - name: Export FoD vulnerability data to GitHub
       uses: edguerreros/github-action/fod-export@main
       env:
-        FOD_URL: ${{ inputs.fod_url }}
+        FOD_URL: "https://ams.fortify.com/"
         FOD_TENANT: "FranklinBank24"
         FOD_CLIENT_SECRET: ${{ inputs.fod_client_secret }}
         FOD_RELEASE: ${{ format('{0}:{1}', inputs.fod_app_name, inputs.fod_release_name) }}
