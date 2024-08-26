@@ -38,6 +38,8 @@ runs:
   steps:
     # Java is required to run the various Fortify utilities.
     # Setup JDK 11 on host
+    - name: Checkout
+        uses: actions/checkout@v4
     - uses: actions/setup-java@v4
       with:
         distribution: 'temurin'
