@@ -77,7 +77,8 @@ runs:
     - name: Package Code + Dependencies
       uses: edguerreros/github-action/package@main
       env:
-        EXTRA_PACKAGE_OPTS: -bf "${BUILD_FILE}" -oss
+        EXTRA_PACKAGE_OPTS: -bt none -oss
+        #-bf "${BUILD_FILE}" -oss
         PACKAGE_FILE: "package"
         BUILD_FILE: "pom.xml"
     # Start Fortify on Demand SAST scan and wait until results complete.
