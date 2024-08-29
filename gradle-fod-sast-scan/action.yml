@@ -105,7 +105,7 @@ runs:
     - name: Package Code + Dependencies
       uses: edguerreros/github-action/package@main
       env:
-        EXTRA_PACKAGE_OPTS: -bt gradle -bf "${BUILD_FILE}" -bc "${BUILD_COMMAND}" -oss
+        EXTRA_PACKAGE_OPTS: -bt none -oss
         PACKAGE_FILE: "package"
         BUILD_FILE: "build.gradle"
         BUILD_COMMAND: ${{ inputs.gradle_build_command }}
