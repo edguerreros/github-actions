@@ -99,7 +99,7 @@ runs:
       uses: edguerreros/github-action/fod-export@main
       env:
         FOD_URL: ${{ inputs.fod_url }}
-        FOD_TENANT: "FranklinBank24"
+        FOD_TENANT: ${{ inputs.fod_tenant }}
         FOD_CLIENT_SECRET: ${{ inputs.fod_client_secret }}
         FOD_CLIENT_ID: ${{ inputs.fod_client_id }}
         FOD_RELEASE: ${{ format('{0}:{1}', inputs.fod_app_name, inputs.fod_release_name) }}
