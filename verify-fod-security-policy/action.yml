@@ -46,8 +46,8 @@ runs:
       id: verify-security-policy
       shell: bash
       run: |
-        fcli fod action run release-summary --release "${FOD_APP_NAME}:${FOD_RELEASE_NAME}" --session github-actions >> $GITHUB_STEP_SUMMARY
-        fcli fod action run check-policy --release "${FOD_APP_NAME}:${FOD_RELEASE_NAME}" --session github-actions
+        fcli fod action run release-summary --release "MCOB:v1" --session github-actions >> $GITHUB_STEP_SUMMARY
+        fcli fod action run check-policy --release "MCOB:v1" --session github-actions
       env: 
         FOD_APP_NAME: ${{ inputs.fod_app_name }}
         FOD_RELEASE_NAME: ${{ inputs.fod_release_name }}
